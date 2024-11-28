@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Relatório</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                margin: 0;
+                padding: 0;
+                color: #333;
+            }
+
+            header {
+                background-color: #4CAF50;
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+
+            h1, h2 {
+                margin: 0;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-top: 30px;
+            }
+
+            h2 {
+                font-size: 20px;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+
+            button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 15px 25px;
+                margin: 10px;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+
+            button:hover {
+                background-color: #2b6e2e;
+            }
+
+            .container {
+                text-align: center;
+                margin-top: 40px;
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .buttons form {
+                display: inline-block;
+            }
+
+            .buttons button {
+                width: 200px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h2>Bem-vindo, qual relatório você pretende gerar?</h2>
+        </header>
+
+        <div class="container">
+            <h1>Clique no botão para gerar o relatório</h1>
+
+            <div class="buttons">
+                <!-- Formulário para RELATÓRIO DE VENDAS -->
+                <form method="get" action="{% url 'relatorio_vendas' %}">
+                    <button type="submit">RELATÓRIO DE VENDAS</button>
+                </form>
+
+                <!-- Formulário para RELATÓRIO DE ESTOQUE -->
+                <form method="get" action="{% url 'relatorio_estoque' %}">
+                    <button type="submit">RELATÓRIO DE ESTOQUE</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
