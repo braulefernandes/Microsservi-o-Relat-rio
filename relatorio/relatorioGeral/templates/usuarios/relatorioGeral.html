@@ -69,6 +69,11 @@
             .buttons button {
                 width: 200px;
             }
+
+            /* Adicionando estilo para links de botões */
+            .button-link {
+                text-decoration: none;
+            }
         </style>
     </head>
 
@@ -81,13 +86,13 @@
             <h1>Clique no botão para gerar o relatório</h1>
 
             <div class="buttons">
-                <!-- Formulário para RELATÓRIO DE VENDAS -->
-                <form method="get" action="{% url 'relatorio_vendas' %}">
-                    <button type="submit">RELATÓRIO DE VENDAS</button>
-                </form>
+                <!-- Link para RELATÓRIO DE VENDAS -->
+                <a href="{% url 'relatorioVendas' %}" class="button-link">
+                    <button>RELATÓRIO DE VENDAS</button>
+                </a>
 
                 <!-- Formulário para RELATÓRIO DE ESTOQUE -->
-                <form method="get" action="{% url 'relatorio_estoque' %}">
+                <form action="{% url 'relatorioEstoque' %}" method="get">
                     <button type="submit">RELATÓRIO DE ESTOQUE</button>
                 </form>
             </div>

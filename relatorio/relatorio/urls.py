@@ -5,6 +5,7 @@ from relatorioGeral import views
 urlpatterns = [
     #rota, view responsavel, nome de referencia
     #usuarios.com
-    path('', views.home, name='relatorioGeral'),
-    path('relatorio_vendas/', views.relatorio_vendas, name='relatorio_vendas')
+    path('', views.relatorioGeral, name='relatorioGeral'),
+    path('relatorioVendas', views.relatorioVendas, name='relatorioVendas'),
+    path('relatorioEstoque', views.relatorioEstoque, name='relatorioEstoque'),
 ]
