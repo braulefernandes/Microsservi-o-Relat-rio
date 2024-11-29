@@ -28,7 +28,7 @@ from .models import RelatorioEstoque
 
 def fetch_estoque_from_arthur():
     # Substitua pela URL real do servidor do Arthur
-    url = "https://arthur-server.com/api/estoque/"
+    url = "estoquepadaria-production.ip.railway.app/estoque/todos"
     try:
         # Faz a requisição para o servidor do Arthur
         response = requests.get(url)
@@ -38,10 +38,12 @@ def fetch_estoque_from_arthur():
         # Insere os dados no banco de dados local
         for item in estoque_data:
             RelatorioEstoque.objects.create(
-                nome=item["nome"],
-                valor_unitario=item["valor_unitario"],
-                quantidade=item["quantidade"],
-                categoria=item["categoria"]
+                id_produto = item["id_produto"],
+                nome = item["nome"],
+                valor_unitario = item["valor_unitario"],
+                quantidade = item["quantidade"],
+                descricao = item["descricao"],
+                categoria = item["categoria"]
             )
     except requests.exceptions.RequestException as e:
         print(f"Erro ao buscar dados de estoque do Arthur: {e}")

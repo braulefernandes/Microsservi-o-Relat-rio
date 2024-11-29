@@ -4,14 +4,13 @@ from .models import RelatorioVendas
 
 
 def relatorioGeral(request):
-
-    return render (request, 'usuarios/relatorioGeral.html')
+    return render (request, 'relatorioGeral/templates/relatorioGeral.html')
 
 def relatorioVendas(request):
-    return render (request, 'relatorioVendas.html')
+    return render (request, '/relatorioVendas.html')
 
 def relatorioEstoque(request):
-    return render (request, 'relatorioEstoque.html')
+    return render (request, '/relatorioEstoque.html')
 
 
 def relatorio_vendas_json(request):
@@ -23,3 +22,13 @@ def relatorio_vendas_json(request):
 
     # Retornando a resposta em formato JSON
     return JsonResponse(vendas_data, safe=False)
+
+def relatorio_estoque_json(request):
+    # Consultando todos os registros de RelatorioVendas
+    estoque = RelatorioEstoque.objects.all()
+
+    # Convertendo os registros para um formato de lista de dicionários
+    estoque_data = list(estoque.values())
+
+    # Retornando a resposta em formato JSON
+    return JsonResponse(estoque_data, safe=False)
