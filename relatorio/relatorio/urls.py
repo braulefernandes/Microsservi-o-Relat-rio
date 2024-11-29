@@ -8,4 +8,5 @@ urlpatterns = [
     path('', views.relatorioGeral, name='relatorioGeral'),
     path('relatorioVendas', views.relatorioVendas, name='relatorioVendas'),
     path('relatorioEstoque', views.relatorioEstoque, name='relatorioEstoque'),
+    path('relatorio-vendas/', views.relatorio_vendas_json, name='relatorio_vendas_json'),
 ]

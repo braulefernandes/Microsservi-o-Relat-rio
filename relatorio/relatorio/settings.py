@@ -76,15 +76,14 @@ WSGI_APPLICATION = 'relatorio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",
-    },
-    'estoque': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "estoque.sqlite3",
-    },
+        'ENGINE': 'django.db.backends.mysql',  # Driver MySQL
+        'NAME': 'bd_relatorio',                # Nome do banco de dados
+        'USER': 'root',                        # Usuário do MySQL
+        'PASSWORD': '1234',                    # Senha do usuário
+        'HOST': '127.0.0.1',                   # Endereço do servidor MySQL
+        'PORT': '3306',                        # Porta do MySQL
+    }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
